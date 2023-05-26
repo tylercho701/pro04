@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- mappers/noticeMapper.xml -->
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	<select id="noticeList" resultType="com.myshop.dto.NoticeDTO">
+		select * from notice
+	</select>
+	<select id="noticeDetail" resultType="com.myshop.dto.NoticeDTO">
+		select * from notice where no = #{no}
+	</select>
+	<insert id="noticeInsert">
+		insert into notice(no, title, content) values (#{no}, #{title}, #{content})
+	</insert>
+	<delete id="noticeDelete">
+		delete from notice where no = #{no}
+	</delete>
+	<update id="noticeEdit">
+		update notice set title = #{title}, content = #{content} where no = #{no}
+	</update>
+</mapper>
+<!-- namespace나 해당 명령의 id는 중복되면 절대 안됨 -->

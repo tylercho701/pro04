@@ -130,7 +130,6 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
 		    <version>5.0.8.RELEASE</version>
-		    <scope>test</scope>
 		</dependency>
 		
 		<!-- 스프링 maven-war 도구 -->
@@ -160,6 +159,13 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
 		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- Spring JDBC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
 		</dependency>
 		
 		<!-- 자바 웹 DB 연결 라이브러리 -->
