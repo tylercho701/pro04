@@ -49,6 +49,19 @@
 	
 	<context:component-scan base-package="com.myshop" />
 	
-	
-	
+	<!-- 인터셉터 -->
+	<beans:bean id="LoginInterceptor" class="com.myshop.util.LoginInterceptor" />
+	<beans:bean id="AdminInterceptor" class="com.myshop.util.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+			<mapping path="/notice/insert.do" />
+			<mapping path="/notice/edit.do" />
+			<beans:ref bean="LoginInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/member/list.do" />
+			<mapping path="/member/info.do" />
+			<beans:ref bean="AdminInterceptor"/>
+		</interceptor>
+	</interceptors>
 </beans:beans>
