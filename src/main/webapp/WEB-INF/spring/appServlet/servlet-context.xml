@@ -32,6 +32,8 @@
 	<resources mapping="/purchase/**" location="/WEB-INF/views/purchase" />
 	<resources mapping="/product/**" location="/WEB-INF/views/product" />
 	<resources mapping="/review/**" location="/WEB-INF/views/review" />
+	<resources mapping="/cart/**" location="/WEB-INF/views/cart" />
+	<resources mapping="/category/**" location="/WEB-INF/views/category" />
 
 	<!-- 리졸버에 대한 접두사와 접미사 설정 -->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

@@ -44,30 +44,23 @@
        </ul>
      </div>
   </nav>
-    <!-- End Top Bar -->
-	<!-- 
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-      <ul class="orbit-container">
-        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-        <li class="orbit-slide is-active">
-          <img src="https://placeimg.com/2000/750/any" alt="더미이미지">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placeimg.com/2000/750/animals" alt="더미이미지">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placeimg.com/2000/750/nature" alt="더미이미지">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placeimg.com/2000/750/tech" alt="더미이미지">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placeimg.com/2000/750/arch" alt="더미이미지">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placeimg.com/2000/750/people" alt="더미이미지">
-        </li>
+  
+  
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
       </ul>
-    </div>
-     -->
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        <button type="button" class="btn btn-primary">Sign-up</button>
+      </div>
+    </header>
