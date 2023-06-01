@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/reviewMapper.xml -->
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+	<select id="reviewList" resultType="com.myshop.dto.ReviewDTO">
+		select * from review order by reviewid desc
+	</select>
+	<select id="reviewListById" resultType="com.myshop.dto.ReviewDTO">
+		select * from review where id = #{id}
+	</select>
+	<select id="reviewListByProduct" resultType="com.myshop.dto.ReviewDTO">
+		select * from review where purchaseid = (select purchaseid from purchase where productid = #{productid})
+	</select>
+	<select id="reviewDetail" resultType="com.myshop.dto.ReviewDTO">
+		select * from review where reviewid = ${reviewid}
+	</select>
+	<update id="reviewReadCnt">
+		update review set readcnt = readcnt = 1 where reviewid = #{reviewid}
+	</update>
+	<insert id="reviewInsert">
+		insert into review (id, purchaseid, reviewtitle, reviewcontent, reviewpoint) values (#{id), #{purchaseid}, #{reviewtitle}, #{reviewcontent}, #{reviewpoint})
+	</insert>
+	<update id="reviewUpdate">
+		update review set reviewtitle = ${reviewtitle}, reviewcontent = #{reviewcontent}, reviewpoint = #{reviewpoint} where reviewid = #{reviewid}
+	</update>
+	<delete id="reviewDelete">
+		delete from review where reviewid = #{reviewid}
+	</delete>
+</mapper>
+<!-- namespace나 해당 명령의 id는 중복되면 절대 안됨 -->

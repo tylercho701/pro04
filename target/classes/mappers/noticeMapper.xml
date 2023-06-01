@@ -10,6 +10,9 @@
 	<select id="noticeDetail" resultType="com.myshop.dto.NoticeDTO">
 		select * from notice where no = #{no}
 	</select>
+	<update id="noticeReadCnt">
+		update notice set readcnt = readcnt + 1 where noticeid = #{noticeid}
+	</update>
 	<insert id="noticeInsert">
 		insert into notice(no, title, content) values (#{no}, #{title}, #{content})
 	</insert>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/productMapper.xml -->
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+	<select id="productListAll" resultType="com.myshop.dto.ProductDTO">
+		select * from product 
+	</select>
+	<select id="productListByCategory" resultType="com.myshop.dto.ProductDTO">
+		select * from product where categoryid = #{categoryid}
+	</select>
+	<select id="productDetail" resultType="com.myshop.dto.ProductDTO">
+		select * from product where productid = #{productid}
+	</select>
+	<insert id="productInsert">
+		insert into product (productname, productamount, pic1, pic2, pic3, categoryid, stock) values (#{productname}, #{productamount}, #{pic1}, #{pic2}, #{pic3}, #{categoryid}, #{stock})
+	</insert>
+	<update id="productUpdate">
+		update product set productname = #{productname}, productamount = #{productamount}, pic1 = #{pic1}, pic2 = #{pic2}, pic3 = #{pic3}, categoryid = #{categoryid} where productid = #{productid}
+	</update>
+	<update id="productInstock">
+		update product set stock = stock + ${stock} where productid = ${productid}
+	</update>
+	<update id="purchaseReleaseStock">
+		update product set stock = stock - ${quantity} where productid = ${productid}
+	</update>
+</mapper>
+<!-- namespace나 해당 명령의 id는 중복되면 절대 안됨 -->

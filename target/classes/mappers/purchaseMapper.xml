@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/purchaseMapper.xml -->
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="purchase">
+	<select id="purchaseList" resultType="com.myshop.dto.PurchaseDTO">
+		select * from purchase order by purchaseid desc
+	</select>
+	<select id="purchaseListById" resultType="com.myshop.dto.PurchaseDTO">
+		select * from purchase where id = #{id} order by purchaseid desc
+	</select>
+	<insert id="purchaseInsert">
+		insert into purchase(productid, quantity, id, purchasetype, purchasecode, purchaseprice) values (#{productid}, #{quantity}, #{id}, #{purchasetype}, #{purchasecode}, #{purchaseprice})
+	</insert>
+	<update id="purchaseInProgress">
+		update purchase set exid = #{exid}, excode = #{excode}, exstatus = '배송 중' where purchaseid = #{purchaseid}
+	</update>
+	<update id="purchaseDoneExpress">
+		update purchase set exstatus = '배송완료' where purchaseid = #{purchaseid}
+	</update>
+	<update id="purchaseRequestReturnFromMember">
+		update purchase set exstatus = '반품접수' where purchaseid = #{purchaseid}
+	</update>
+	<update id="purchaseDoneReturn">
+		update purchase set exstatus = '반품완료' where purchaseid = #{purchaseid}
+	</update>
+</mapper>
+<!-- namespace나 해당 명령의 id는 중복되면 절대 안됨 -->
