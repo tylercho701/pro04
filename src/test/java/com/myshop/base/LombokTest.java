@@ -13,9 +13,9 @@ public class LombokTest {
 	@Test
 	public void test() {
 		SampleDTO sample = new SampleDTO();
-		sample.setField1("조교행");
+		/* sample.setField1("조교행");
 		sample.setField2(100);
-		sample.setField3(174.3);
+		sample.setField3(174.3); */
 		logger.info(sample.toString());
 	}
 }
