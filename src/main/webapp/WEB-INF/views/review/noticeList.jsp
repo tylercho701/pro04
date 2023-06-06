@@ -26,7 +26,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<a href="${path }">글 등록</a>
+	<c:if test="${sid.equals('admin') }">
+		<a href="${path }">글 등록</a>
+	</c:if>
 	<a href="javascript:history.go(-1)">뒤로가기</a>
 </body>
 </html>
